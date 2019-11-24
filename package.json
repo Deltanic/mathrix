@@ -1,0 +1,17 @@
+{
+  "name": "mathrix",
+  "description": "Modern platform-independent math library for JavaScript.",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "author": "Deltanic <rdg94@live.nl>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^3.7.2"
+  }
+}
