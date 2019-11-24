@@ -51,11 +51,11 @@ export default class Vector3 {
     );
   }
 
-  eq(v: Vector3) {
+  eq(v: Vector3, epsilon = 0) {
     return (
-      this.x === v.x &&
-      this.y === v.y &&
-      this.z === v.z
+      Math.abs(this.x - v.x) <= epsilon &&
+      Math.abs(this.y - v.y) <= epsilon &&
+      Math.abs(this.z - v.z) <= epsilon
     );
   }
 

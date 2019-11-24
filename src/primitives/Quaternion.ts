@@ -11,12 +11,12 @@ export default class Quaternion {
     this.w = w;
   }
 
-  eq(v: Quaternion) {
+  eq(q: Quaternion, epsilon = 0) {
     return (
-      this.x === v.x &&
-      this.y === v.y &&
-      this.z === v.z &&
-      this.w === v.w
+      Math.abs(this.x - q.x) <= epsilon &&
+      Math.abs(this.y - q.y) <= epsilon &&
+      Math.abs(this.z - q.z) <= epsilon &&
+      Math.abs(this.w - q.w) <= epsilon
     );
   }
 

@@ -54,12 +54,12 @@ export default class Vector4 {
     );
   }
 
-  eq(v: Vector4) {
+  eq(v: Vector4, epsilon = 0) {
     return (
-      this.x === v.x &&
-      this.y === v.y &&
-      this.z === v.z &&
-      this.w === v.w
+      Math.abs(this.x - v.x) <= epsilon &&
+      Math.abs(this.y - v.y) <= epsilon &&
+      Math.abs(this.z - v.z) <= epsilon &&
+      Math.abs(this.w - v.w) <= epsilon
     );
   }
 

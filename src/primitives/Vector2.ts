@@ -48,10 +48,10 @@ export default class Vector2 {
     );
   }
 
-  eq(v: Vector2) {
+  eq(v: Vector2, epsilon = 0) {
     return (
-      this.x === v.x &&
-      this.y === v.y
+      Math.abs(this.x - v.x) <= epsilon &&
+      Math.abs(this.y - v.y) <= epsilon
     );
   }
 
