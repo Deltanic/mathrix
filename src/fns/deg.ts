@@ -1,7 +1,7 @@
 import Vector2 from '../primitives/Vector2';
 import Vector3 from '../primitives/Vector3';
 import Vector4 from '../primitives/Vector4';
-import core_deg from '../core/rad';
+import core_deg from '../core/deg';
 
 const fromVec2 = (vec: Vector2) => <any>null; /* TODO: Implement. */
 const fromVec3 = (vec: Vector3) => <any>null; /* TODO: Implement. */
