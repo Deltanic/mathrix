@@ -13,7 +13,13 @@ import {
   RAD_TO_DEG,
 } from './constants';
 
+import {
+  Matrix4Array,
+} from './types';
+
 export {
+  Matrix4Array,
+
   DEG_TO_RAD,
   RAD_TO_DEG,
 

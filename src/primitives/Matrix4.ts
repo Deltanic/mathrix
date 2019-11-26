@@ -1,9 +1,4 @@
-export type Matrix4Array = [
-  [number, number, number, number],
-  [number, number, number, number],
-  [number, number, number, number],
-  [number, number, number, number],
-];
+import { Matrix4Array } from '../types';
 
 export default class Matrix4 {
   public matrix: Matrix4Array;
