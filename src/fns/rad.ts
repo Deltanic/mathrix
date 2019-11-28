@@ -11,7 +11,7 @@ export default function rad(deg: Vector2): Vector2;
 export default function rad(deg: Vector3): Vector3;
 export default function rad(deg: Vector4): Vector4;
 export default function rad(deg: number): number;
-export default function rad(deg: any): any {
+export default function rad(deg: any) {
   if (deg instanceof Vector2) return fromVec2(deg);
   if (deg instanceof Vector3) return fromVec3(deg);
   if (deg instanceof Vector4) return fromVec4(deg);
