@@ -1,17 +1,5 @@
 import { Matrix4Array } from '../types';
-
-const createMatrix = (x: number): Matrix4Array => ([
-  [x, x, x, x],
-  [x, x, x, x],
-  [x, x, x, x],
-  [x, x, x, x],
-]);
-
-const toMatrix = (x: Matrix4 | number): Matrix4Array => (
-  x instanceof Matrix4
-    ? x.matrix
-    : createMatrix(x)
-);
+import { toMatrix } from '../helpers';
 
 export default class Matrix4 {
   public matrix: Matrix4Array;
