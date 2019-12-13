@@ -1,10 +1,3 @@
-export type Matrix4Array = [
-  [number, number, number, number],
-  [number, number, number, number],
-  [number, number, number, number],
-  [number, number, number, number],
-];
-
 export enum AxisOrder {
   XYZ = 'XYZ',
   YXZ = 'YXZ',
@@ -13,3 +6,10 @@ export enum AxisOrder {
   YZX = 'YZX',
   XZY = 'XZY',
 }
+
+export type Matrix4Array = [
+  [number, number, number, number],
+  [number, number, number, number],
+  [number, number, number, number],
+  [number, number, number, number],
+];
