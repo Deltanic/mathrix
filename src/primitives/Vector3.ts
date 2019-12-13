@@ -1,5 +1,5 @@
-import Quaternion from '../primitives/Quaternion';
-import Matrix4 from '../primitives/Matrix4';
+import Quaternion from './Quaternion';
+import Matrix4 from './Matrix4';
 import rad from '../core/rad';
 import { UnsupportedAxisError } from '../errors';
 import { AxisOrder, Matrix4Array } from '../types';
