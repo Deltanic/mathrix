@@ -1,5 +1,10 @@
-import { Matrix4Array } from '../types';
+import clamp from '../core/clamp';
+import deg from '../core/deg';
+import Vector3 from './Vector3';
+
 import { toMatrix } from '../helpers';
+import { Matrix4Array, AxisOrder } from '../types';
+import { UnsupportedAxisError } from '../errors';
 
 export default class Matrix4 {
   public matrix: Matrix4Array;
@@ -120,6 +125,107 @@ export default class Matrix4 {
       Math.abs(this.matrix[3][2] - m.matrix[3][2]) <= epsilon &&
       Math.abs(this.matrix[3][3] - m.matrix[3][3]) <= epsilon
     );
+  }
+
+  toVector(order: string = AxisOrder.XYZ) {
+    let x: number;
+    let y: number;
+    let z: number;
+
+    switch (order) {
+      case AxisOrder.XYZ: {
+        y = Math.asin(clamp(this.matrix[0][2], -1, 1));
+
+        if (Math.abs(this.matrix[0][2]) < 1) {
+          x = Math.atan2(-this.matrix[1][2], this.matrix[2][2]);
+          z = Math.atan2(-this.matrix[0][1], this.matrix[0][0]);
+        } else {
+          x = Math.atan2(this.matrix[2][1], this.matrix[1][1]);
+          z = 0;
+        }
+
+        break;
+      }
+
+      case AxisOrder.YXZ: {
+        x = Math.asin(-clamp(this.matrix[1][2], -1, 1));
+
+        if (Math.abs(this.matrix[1][2]) < 1) {
+          y = Math.atan2(this.matrix[0][2], this.matrix[2][2]);
+          z = Math.atan2(this.matrix[1][0], this.matrix[1][1]);
+        } else {
+          y = Math.atan2(-this.matrix[2][0], this.matrix[0][0]);
+          z = 0;
+        }
+
+        break;
+      }
+
+      case AxisOrder.ZXY: {
+        x = Math.asin(clamp(this.matrix[2][1], -1, 1));
+
+        if (Math.abs(this.matrix[2][1]) < 1) {
+          y = Math.atan2(-this.matrix[2][0], this.matrix[2][2]);
+          z = Math.atan2(-this.matrix[0][1], this.matrix[1][1]);
+        } else {
+          y = 0;
+          z = Math.atan2(this.matrix[1][0], this.matrix[0][0]);
+        }
+
+        break;
+      }
+
+      case AxisOrder.ZYX: {
+        y = Math.asin(-clamp(this.matrix[2][0], -1, 1));
+
+        if (Math.abs(this.matrix[2][0]) < 1) {
+          x = Math.atan2(this.matrix[2][1], this.matrix[2][2]);
+          z = Math.atan2(this.matrix[1][0], this.matrix[0][0]);
+        } else {
+          x = 0;
+          z = Math.atan2(-this.matrix[0][1], this.matrix[1][1]);
+        }
+
+        break;
+      }
+
+      case AxisOrder.YZX: {
+        z = Math.asin(clamp(this.matrix[1][0], -1, 1));
+
+        if (Math.abs(this.matrix[1][0]) < 1) {
+          x = Math.atan2(-this.matrix[1][2], this.matrix[1][1]);
+          y = Math.atan2(-this.matrix[2][0], this.matrix[0][0]);
+        } else {
+          x = 0;
+          y = Math.atan2(this.matrix[0][2], this.matrix[2][2]);
+        }
+
+        break;
+      }
+
+      case AxisOrder.XZY: {
+        z = Math.asin(-clamp(this.matrix[0][1], -1, 1));
+
+        if (Math.abs(this.matrix[0][1]) < 1) {
+          x = Math.atan2(this.matrix[2][1], this.matrix[1][1]);
+          y = Math.atan2(this.matrix[0][2], this.matrix[0][0]);
+        } else {
+          x = Math.atan2(-this.matrix[1][2], this.matrix[2][2]);
+          y = 0;
+        }
+
+        break;
+      }
+
+      default:
+        throw new UnsupportedAxisError(order);
+    }
+
+    x = deg(x);
+    y = deg(y);
+    z = deg(z);
+
+    return new Vector3(x, y, z);
   }
 
   toArray() {
