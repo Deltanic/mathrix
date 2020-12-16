@@ -35,6 +35,6 @@ export default function emod(n: any, m: any) {
   if (n instanceof Vector2) return fromVec2(n, ensureVec2(m));
   if (n instanceof Vector3) return fromVec3(n, ensureVec3(m));
   if (n instanceof Vector4) return fromVec4(n, ensureVec4(m));
-  
+
   return base_emod(n, m);
 }
