@@ -10,3 +10,5 @@ export const DEG_QUAD_W = 360;
 
 export const DEG_TO_RAD = Math.PI / 180;
 export const RAD_TO_DEG = 180 / Math.PI;
+
+export const EPSILON = 0.00001;

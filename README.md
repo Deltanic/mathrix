@@ -20,13 +20,21 @@ Documentation
 - RAD_TO_DEG
 - EPSILON
 
+### Classes
+
+- Vector2
+- Vector3
+- Vector4
+- Quaternion
+- Matrix4
+
 ### Constructors
 
-- vec2 / Vector2
-- vec3 / Vector3
-- vec4 / Vector4
-- quat / Quaternion
-- mat4 / Matrix4
+- vec2
+- vec3
+- vec4
+- quat
+- mat4
 
 ### Functions
 
