@@ -12,4 +12,12 @@ export default class Vector4 {
     this.z = z;
     this.w = w;
   }
+
+  // TODO: Implement.
+  clamp = (..._: any[]) => this
+  deg   = (..._: any[]) => this
+  emod  = (..._: any[]) => this
+  mod   = (..._: any[]) => this
+  rad   = (..._: any[]) => this
+  sign  = (..._: any[]) => this
 }

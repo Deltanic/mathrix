@@ -8,4 +8,12 @@ export default class Vector2 {
     this.x = x;
     this.y = y;
   }
+
+  // TODO: Implement.
+  clamp = (..._: any[]) => this
+  deg   = (..._: any[]) => this
+  emod  = (..._: any[]) => this
+  mod   = (..._: any[]) => this
+  rad   = (..._: any[]) => this
+  sign  = (..._: any[]) => this
 }
