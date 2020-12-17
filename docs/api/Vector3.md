@@ -2,5 +2,5 @@ Vector3
 =======
 
 ```js
-Vector3()
+new Vector3()
 ```

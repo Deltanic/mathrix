@@ -2,5 +2,5 @@ Matrix4
 =======
 
 ```js
-Matrix4()
+new Matrix4()
 ```

@@ -2,5 +2,5 @@ Quaternion
 ==========
 
 ```js
-Quaternion()
+new Quaternion()
 ```
