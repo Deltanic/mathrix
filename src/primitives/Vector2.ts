@@ -17,9 +17,9 @@ export default class Vector2 {
   }
 
   clamp = createClampVec2(this);
-  deg   = createDegVec2(this);
-  emod  = createEmodVec2(this);
-  mod   = createModVec2(this);
-  rad   = createRadVec2(this);
-  sign  = createSignVec2(this);
+  deg = createDegVec2(this);
+  emod = createEmodVec2(this);
+  mod = createModVec2(this);
+  rad = createRadVec2(this);
+  sign = createSignVec2(this);
 }
