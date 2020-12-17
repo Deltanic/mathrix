@@ -2,5 +2,5 @@ DEG_QUAD_S
 ==========
 
 ```js
-DEG_QUAD_S()
+DEG_QUAD_S
 ```

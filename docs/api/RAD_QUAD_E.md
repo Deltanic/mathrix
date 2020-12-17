@@ -2,5 +2,5 @@ RAD_QUAD_E
 ==========
 
 ```js
-RAD_QUAD_E()
+RAD_QUAD_E
 ```

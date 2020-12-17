@@ -2,5 +2,5 @@ EPSILON
 =======
 
 ```js
-EPSILON()
+EPSILON
 ```
