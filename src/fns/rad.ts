@@ -21,6 +21,10 @@ const fromVec4 = (vec: Vector4) => new Vector4(
   base_rad(vec.w),
 );
 
+export const createRadVec2 = (vec: Vector2) => () => fromVec2(vec);
+export const createRadVec3 = (vec: Vector3) => () => fromVec3(vec);
+export const createRadVec4 = (vec: Vector4) => () => fromVec4(vec);
+
 export default function rad(deg: Vector2): Vector2;
 export default function rad(deg: Vector3): Vector3;
 export default function rad(deg: Vector4): Vector4;

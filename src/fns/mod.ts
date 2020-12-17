@@ -27,6 +27,10 @@ const fromVec4 = (vec: Vector4, m: Vector4) => new Vector4(
   base_mod(vec.w, m.w),
 );
 
+export const createModVec2 = (vec: Vector2) => (m: Vector2 | number) => fromVec2(vec, ensureVec2(m));
+export const createModVec3 = (vec: Vector3) => (m: Vector3 | number) => fromVec3(vec, ensureVec3(m));
+export const createModVec4 = (vec: Vector4) => (m: Vector4 | number) => fromVec4(vec, ensureVec4(m));
+
 export default function mod(n: Vector2, m: Vector2 | number): Vector2;
 export default function mod(n: Vector3, m: Vector3 | number): Vector3;
 export default function mod(n: Vector4, m: Vector4 | number): Vector4;

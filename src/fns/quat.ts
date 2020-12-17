@@ -8,6 +8,9 @@ import Quaternion from '../primitives/Quaternion';
 import Vector3 from '../primitives/Vector3';
 import Matrix4 from '../primitives/Matrix4';
 
+export const createFromVec3 = (vec: Vector3) => (axisOrder: AxisOrder) => convertVector3ToQuaternion(vec, axisOrder);
+export const createFromMat4 = (mat: Matrix4) => () => convertMatrix4ToQuaternion(mat);
+
 export default function quat(vec: Vector3, order: AxisOrder): Quaternion;
 export default function quat(mat: Matrix4): Quaternion;
 export default function quat(x: number, y: number, z: number, w: number): Quaternion;

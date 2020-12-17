@@ -27,6 +27,10 @@ const fromVec4 = (vec: Vector4, min: Vector4, max: Vector4) => new Vector4(
   base_clamp(vec.w, min.w, max.w),
 );
 
+export const createClampVec2 = (vec: Vector2) => (min: Vector2 | number, max: Vector2 | number) => fromVec2(vec, ensureVec2(min), ensureVec2(max));
+export const createClampVec3 = (vec: Vector3) => (min: Vector3 | number, max: Vector3 | number) => fromVec3(vec, ensureVec3(min), ensureVec3(max));
+export const createClampVec4 = (vec: Vector4) => (min: Vector4 | number, max: Vector4 | number) => fromVec4(vec, ensureVec4(min), ensureVec4(max));
+
 export default function clamp(x: Vector2, min: Vector2 | number, max: Vector2 | number): Vector2;
 export default function clamp(x: Vector3, min: Vector3 | number, max: Vector3 | number): Vector3;
 export default function clamp(x: Vector4, min: Vector4 | number, max: Vector4 | number): Vector4;

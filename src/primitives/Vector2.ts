@@ -1,3 +1,10 @@
+import { createClampVec2 } from "../fns/clamp";
+import { createDegVec2 } from "../fns/deg";
+import { createEmodVec2 } from "../fns/emod";
+import { createModVec2 } from "../fns/mod";
+import { createRadVec2 } from "../fns/rad";
+import { createSignVec2 } from "../fns/sign";
+
 export default class Vector2 {
   public type: 'Vector2' = 'Vector2';
 
@@ -9,11 +16,10 @@ export default class Vector2 {
     this.y = y;
   }
 
-  // TODO: Implement.
-  clamp = (..._: any[]) => this
-  deg   = (..._: any[]) => this
-  emod  = (..._: any[]) => this
-  mod   = (..._: any[]) => this
-  rad   = (..._: any[]) => this
-  sign  = (..._: any[]) => this
+  clamp = createClampVec2(this);
+  deg   = createDegVec2(this);
+  emod  = createEmodVec2(this);
+  mod   = createModVec2(this);
+  rad   = createRadVec2(this);
+  sign  = createSignVec2(this);
 }

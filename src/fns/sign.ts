@@ -21,6 +21,10 @@ const fromVec4 = (vec: Vector4) => new Vector4(
   base_sign(vec.w),
 );
 
+export const createSignVec2 = (vec: Vector2) => () => fromVec2(vec);
+export const createSignVec3 = (vec: Vector3) => () => fromVec3(vec);
+export const createSignVec4 = (vec: Vector4) => () => fromVec4(vec);
+
 export default function sign(x: Vector2): Vector2;
 export default function sign(x: Vector3): Vector3;
 export default function sign(x: Vector4): Vector4;

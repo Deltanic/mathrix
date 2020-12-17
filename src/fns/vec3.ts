@@ -7,6 +7,9 @@ import Vector3 from '../primitives/Vector3';
 import Quaternion from '../primitives/Quaternion';
 import Matrix4 from '../primitives/Matrix4';
 
+export const createFromQuat = (quat: Quaternion) => () => convertQuaternionToVector3(quat);
+export const createFromMat4 = (mat: Matrix4) => () => convertMatrix4ToVector3(mat);
+
 export default function vec3(quat: Quaternion): Vector3;
 export default function vec3(mat: Matrix4): Vector3;
 export default function vec3(x: number, y: number, z: number): Vector3;

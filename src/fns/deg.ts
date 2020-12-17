@@ -21,6 +21,10 @@ const fromVec4 = (vec: Vector4) => new Vector4(
   base_deg(vec.w),
 );
 
+export const createDegVec2 = (vec: Vector2) => () => fromVec2(vec);
+export const createDegVec3 = (vec: Vector3) => () => fromVec3(vec);
+export const createDegVec4 = (vec: Vector4) => () => fromVec4(vec);
+
 export default function deg(rad: Vector2): Vector2;
 export default function deg(rad: Vector3): Vector3;
 export default function deg(rad: Vector4): Vector4;
