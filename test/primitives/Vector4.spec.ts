@@ -25,7 +25,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(20);
       expect(val.y).to.equal(25);
       expect(val.z).to.equal(30);
-      expect(val.z).to.equal(20);
+      expect(val.w).to.equal(20);
     });
   });
 
@@ -37,7 +37,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(base_deg(1));
       expect(val.y).to.equal(base_deg(2));
       expect(val.z).to.equal(base_deg(3));
-      expect(val.z).to.equal(base_deg(4));
+      expect(val.w).to.equal(base_deg(4));
     });
   });
 
@@ -49,7 +49,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(10);
       expect(val.y).to.equal(350);
       expect(val.z).to.equal(10);
-      expect(val.z).to.equal(350);
+      expect(val.w).to.equal(350);
     });
   });
 
@@ -61,7 +61,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(10);
       expect(val.y).to.equal(-10);
       expect(val.z).to.equal(10);
-      expect(val.z).to.equal(-10);
+      expect(val.w).to.equal(-10);
     });
   });
 
@@ -73,7 +73,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(base_rad(1));
       expect(val.y).to.equal(base_rad(2));
       expect(val.z).to.equal(base_rad(3));
-      expect(val.z).to.equal(base_rad(4));
+      expect(val.w).to.equal(base_rad(4));
     });
   });
 
@@ -85,7 +85,7 @@ describe('primitives/Vector4', function () {
       expect(val.x).to.equal(1);
       expect(val.y).to.equal(-1);
       expect(val.z).to.equal(0);
-      expect(val.z).to.equal(-0);
+      expect(val.w).to.equal(-0);
     });
   });
 });
