@@ -3,6 +3,78 @@ Mathrix
 
 Modern platform-independent math library for JavaScript.
 
+About
+-----
+
+Mathrix is optimized for immutable operations, and suitable for high-level scripting environments. If you work with WebGL, prefer a mutable interface, or use workloads that benefit from array-based performance, consider using [gl-matrix][gl-matrix] instead.
+
+Examples
+--------
+
+```js
+// Import Mathrix
+import Mathrix from 'mathrix';
+
+// Add two vectors together
+const v1 = Mathrix.vec3(1, 2, 3);
+const v2 = Mathrix.vec3(1, 2, 3);
+const v3 = Mathrix.add(v1, v2);
+
+// Convert Euler angles into a quaternion
+const rotation = Mathrix.vec3(0, 90, 0);
+const quaternion = Mathrix.quat(rotation);
+```
+
+```js
+// If you prefer individual imports
+import { add, vec3, quat } from 'mathrix';
+
+// Add two vectors together
+const v1 = vec3(1, 2, 3);
+const v2 = vec3(1, 2, 3);
+const v3 = add(v1, v2);
+
+// Convert Euler angles into a quaternion
+const rotation = vec3(0, 90, 0);
+const quaternion = quat(rotation);
+```
+
+```js
+// OO interface is also available
+import { Vector3, vec3 } from 'mathrix';
+
+// Add two vectors together
+const v1 = new Vector3(1, 2, 3);
+const v2 = new Vector3(1, 2, 3);
+const v3 = v1.add(v2);
+
+// Convert Euler angles into a quaternion
+const rotation = new Vector3(0, 90, 0);
+const quaternion = rotation.toQuaternion();
+
+// vec3 is a constructor for Vector3
+const vec = vec3(1, 2, 3);
+console.assert(vec instanceof Vector3);
+```
+
+```js
+// Mathrix is fully compatible with the standard JavaScript math library
+import Math from 'mathrix';
+
+// Math.floor on a single number
+const num = Math.floor(1.7);
+console.assert(num === 1);
+
+// Or on all components of a vec3
+const vec = Math.floor(Math.vec3(1.1, 2.7, 3.8));
+console.assert(vec.x === 1);
+console.assert(vec.y === 2);
+console.assert(vec.z === 3);
+```
+
+More examples can be found [here](docs/examples/index.md).
+
+
 Documentation
 -------------
 
@@ -52,7 +124,7 @@ Documentation
 - [ensureVec4](docs/api/ensureVec4.md)
 - [ensureMat4](docs/api/ensureMat4.md)
 
-### Internal
+### Internals
 
 - [convertVector3ToQuaternion](docs/api/convertVector3ToQuaternion.md)
 - [convertVector3ToMatrix4](docs/api/convertVector3ToMatrix4.md)
@@ -61,50 +133,4 @@ Documentation
 - [convertMatrix4ToVector3](docs/api/convertMatrix4ToVector3.md)
 - [convertMatrix4ToQuaternion](docs/api/convertMatrix4ToQuaternion.md)
 
-Examples
---------
-
-```js
-// Import Mathrix
-import Mathrix from 'mathrix';
-
-// Convert Euler angles into a quaternion
-const rotation = Mathrix.vec3(0, 90, 0);
-const quaternion = Mathrix.quat(rotation);
-```
-
-```js
-// If you prefer individual imports
-import { vec3, quat } from 'mathrix';
-
-// Convert Euler angles into a quaternion
-const rotation = vec3(0, 90, 0);
-const quaternion = quat(rotation);
-```
-
-```js
-// OO interface is also available
-import { Vector3, vec3 } from 'mathrix';
-
-const rotation = new Vector3(0, 90, 0);
-const quaternion = rotation.toQuaternion();
-
-// vec3 is a constructor for Vector3
-const vec = vec3(1, 2, 3);
-console.assert(vec instanceof Vector3);
-```
-
-```js
-// Mathrix is fully compatible with the standard math library
-import Math from 'mathrix';
-
-// Math.ceil on a single number
-const num = Math.ceil(0.7);
-console.assert(numCeil === 1);
-
-// Or on all components of a vec3
-const vec = Math.ceil(Math.vec3(0.1, 1.7, 2.8));
-console.assert(vecCeil.x === 1);
-console.assert(vecCeil.y === 2);
-console.assert(vecCeil.z === 3);
-```
+[gl-matrix]: http://glmatrix.net/
